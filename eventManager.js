@@ -1,4 +1,3 @@
-
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -12,7 +11,7 @@ app.set('view engine', 'handlebars');
 app.set('port', 1111);
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.render('home');
 });
 
 app.use(function(req,res){
