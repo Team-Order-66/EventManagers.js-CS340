@@ -10,7 +10,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 1111);
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
   res.render('home');
 });
 
