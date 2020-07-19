@@ -46,6 +46,7 @@ body{
 }
 	
 /* Changes the color of styling from #1e1e1e to navy when hovering over */
+
 .navBar ul li a:hover {
  	color: orange;
 }
