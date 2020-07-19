@@ -36,6 +36,15 @@ body{
 	padding: 0 20px;
 }
 
+#logo {
+    	position: absolute;
+	top: 10px;
+   	left: 360px;
+    	width: 108px;
+    	height: 82px;
+    	overflow: hidden;
+}
+	
 /* Changes the color of styling from #1e1e1e to navy when hovering over */
 .navBar ul li a:hover {
  	color: orange;
@@ -43,12 +52,12 @@ body{
  
 h1 {
   	font-family: sans-serif;
-        text-align: center;
+	text-align: center;
 }
 
 h2 {
   	font-family: sans-serif;
-       	text-align: center;
+	text-align: center;
 }
 
 .home-ul li{
