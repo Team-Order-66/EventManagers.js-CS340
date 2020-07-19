@@ -14,6 +14,22 @@ app.get('/home', (req, res) => {
   res.render('home');
 });
 
+app.get('/event', (req, res) => {
+  res.render('event');
+});
+
+app.get('/eventVenue', (req, res) => {
+  res.render('eventVenue');
+});
+
+app.get('/eventOrganizer', (req, res) => {
+  res.render('eventOrganizer');
+});
+
+app.get('/customer', (req, res) => {
+  res.render('customer');
+});
+
 app.use(function(req,res){
   res.type('text/plain');
   res.status(404);
