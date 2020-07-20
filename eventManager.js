@@ -22,8 +22,8 @@ app.get('/tickets', (req, res) => {
   res.render('tickets');
 });
 
-app.get('/browseEvents', (req, res) => {
-  res.render('browseEvents');
+app.get('/logIn', (req, res) => {
+  res.render('logIn');
 });
 
 app.get('/eventScheduling', (req, res) => {
