@@ -45,8 +45,6 @@ body{
     	overflow: hidden;
 }
 	
-/* Changes the color of styling from #1e1e1e to navy when hovering over */
-
 .navBar ul li a:hover {
  	color: orange;
 }
@@ -61,7 +59,23 @@ h2 {
 	text-align: center;
 }
 
-.home-ul li{
+.home-ul li {
 	font-family: sans-serif;
         margin-left: 39%;
+}
+
+.vipMembership-ul {
+	margin-left: 30px;
+}
+
+.browseEvents-ul {
+	margin-left: 30px;
+}
+
+.eventScheduling-ul {
+        margin-left: 30px;
+}
+
+.tickets-ul {
+	margin-left: 30px;
 }
