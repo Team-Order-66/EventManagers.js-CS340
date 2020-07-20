@@ -10,11 +10,11 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 1111);
 
-app.get('/', (req, res) => {
-  res.render('home');
-});
-
 app.get('/home', (req, res) => {
+  res.render('home');
+
+});
+app.get('/#', (req, res) => {
   res.render('home');
 });
 
@@ -22,16 +22,16 @@ app.get('/tickets', (req, res) => {
   res.render('tickets');
 });
 
-app.get('/events', (req, res) => {
-  res.render('events');
+app.get('/browseEvents', (req, res) => {
+  res.render('browseEvents');
 });
 
-app.get('/scheduleEvents', (req, res) => {
-  res.render('scheduleEvents');
+app.get('/eventScheduling', (req, res) => {
+  res.render('eventScheduling');
 });
 
-app.get('/vipSignUp', (req, res) => {
-  res.render('vipSignUp');
+app.get('/vipMembership', (req, res) => {
+  res.render('vipMembership');
 });
 
 app.use(function(req,res){
