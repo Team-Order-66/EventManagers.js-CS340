@@ -1,35 +1,12 @@
-<h1>EventManagers.JS Index Page</h1>
-<h2>Outline</h2>
-<ul class="home-ul">
-  <li>Customer Accounts</li>
-    <ul class="vipMembership-ul">
-      <li>Create Customer Account - INSERT - add customer data to Customers table</li>
-      <li>Log In</li>
-      <li>View Purchases - SELECT</li>
-    </ul>
-  <li>Tickets</li>
-    <ul class="vipMembership-ul"> 
-      <li>Buy tickets for scheduled events!</li>
-      <li>Purchase a ticket - INSERT - adds customerId (FK), eventId (FK) to GuestList M:M table</li>
-      <li>Look Up Events - SELECT</li>
-      <li>NULLable relationship between EventVenue and Event - EventVenue does not need a Event</li>
-    </ul> 
-  <li>Event Scheduling</li>
-    <ul class="vipMembership-ul">
-      <li>Are you an event organizer? Browse open slots at event venues and book your events!</li>
-      <li>EventOrganizer SignUp - INSERT - add new data to EventOrganizer table</li>
-      <li>Add Event - INSERT - adds new event to event table</li>
-      <li>Update Event Details- UPDATE - updates event data in Event table</li>
-      <li>Assign EventVenue - UPDATE - Add eventVenueId (FK) to an existing event</li>
-      <li>NULLable relationship - EventOrganizer does not need to have any Events scheduled at all</li>
-      <li>Remove a scheduled event - DELETE - deletes event data from Event table</li>
-    </ul>
-  <li>VIP Membership</li>
-    <ul class="vipMembership-ul">
-      <li>Purchase VIP memberships to specific event venues to get perks when you go to events hosted at these venues!</li>
-      <li>Become a VIP - INSERT - adds customerId (FK), eventId (FK) data to MemberList M:M table</li>
-      <li>View VIP Members - SELECT</li>
-      <li>Remove VIP Membership - DELETE - removes from MemberList M:M table</li>
-    </ul>
-</ul>
+<style>
+body {
+  background-image: url('images/concertBackground.jpg');
+}
 
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+</style>
+
+<h1>Welcome to Event Manager!</h1>

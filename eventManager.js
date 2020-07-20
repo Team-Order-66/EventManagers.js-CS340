@@ -8,14 +8,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 1111);
+app.set('port', 11111);
 
 app.get('/home', (req, res) => {
   res.render('home');
-
 });
-app.get('/#', (req, res) => {
-  res.render('home');
+
+app.get('/index', (req, res) => {
+  res.render('index');
 });
 
 app.get('/tickets', (req, res) => {
@@ -32,6 +32,10 @@ app.get('/eventScheduling', (req, res) => {
 
 app.get('/vipMembership', (req, res) => {
   res.render('vipMembership');
+});
+
+app.get('/viewVIPMembers', (req, res) => {
+  res.render('viewVIPMembers');
 });
 
 app.use(function(req,res){

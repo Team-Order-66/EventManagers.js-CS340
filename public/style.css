@@ -5,7 +5,7 @@
 }
 
 body{
-	background-image: url('images/concertBackground.jpg');
+	//background-image: url('images/concertBackground.jpg');
 }
 
 .navBar nav{
@@ -51,17 +51,23 @@ body{
  
 h1 {
   	font-family: sans-serif;
-	text-align: center;
 }
 
 h2 {
   	font-family: sans-serif;
-	text-align: center;
 }
 
 .home-ul li {
 	font-family: sans-serif;
         margin-left: 39%;
+}
+
+.outline-li {
+	margine-left:px;
+
+}
+.index-ul {
+        margin-left: 30px;
 }
 
 .vipMembership-ul {
@@ -116,5 +122,33 @@ h2 {
 	border: none;
 	background: black;
 	color: white;
+}
+
+.sidenav {
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 140px;
+  left: 300px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 10px 10px 10px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
