@@ -1,0 +1,90 @@
+<style>
+
+.newEvent {
+  max-width: 500px;
+  margin: 2rem auto;
+  border: 2px solid navy;
+  padding: 2rem;
+  label{
+    overflow: scroll;
+  }
+    input, textarea {
+      display: block; 
+      width:100%; 
+  }
+}
+
+table {
+  font-family: arial, sans-serif;
+  width: 60%;
+  margin-left: 600px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-left: 950px;
+}
+
+h4, li {
+  margin-left: 600px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+
+</style>
+
+<!-- Side navigation -->
+<div class="sidenav">
+  <a href="eventScheduling">View Events</a>
+  <a href="createNewEvent">Create a New Event</a>
+  <a href="eventScheduling">Sign-Up for New Event</a>
+</div>
+
+<div class="newEvent"> 
+  <h1>Create a New Event!</h1>
+    <div class="txtb">
+      <label>Event Name: </label>
+    	<input type="text" name="Event Name" id="eventName">
+    </div>
+
+     <div class="txtb">
+      <label>Event Location </label>
+      <input type="text" name="location" id="location">
+    </div>
+
+    <div class="date">
+      <label for="start">Start date:</label>
+      <input type="date" id="start" name="trip-start" 
+    </div>
+
+    <div class="date">
+      <label for="startTime">Start time:</label>
+      <input type="time" id="start" name="trip-start"
+    </div>
+
+    <div class="txtb">
+      <label>E-Mail</label>
+      <input type="email" name="E-mail" id="email">
+    </div>
+
+    <div class="txtb">
+      <label>Phone Number: </label>
+      <input type="text" name="Phone Number" id="phoneNumber">
+    </div>
+
+    <div class="txtb">
+      <label>Message: </label>
+      <textarea type="text" name="Message" id="Message"></textarea>
+    </div>
+     
+    <div class="txtb">
+    	<input type="submit" placeholder="Submit" id="sendBtn">
+    </div>
+
+</form>

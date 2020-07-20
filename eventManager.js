@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 11111);
+app.set('port', 1111);
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -22,12 +22,28 @@ app.get('/tickets', (req, res) => {
   res.render('tickets');
 });
 
-app.get('/logIn', (req, res) => {
+app.get('/account', (req, res) => {
+  res.render('account');
+});
+
+app.post('/logIn', (req, res) => {
   res.render('logIn');
 });
 
 app.get('/eventScheduling', (req, res) => {
   res.render('eventScheduling');
+});
+
+app.get('/viewPurchase', (req, res) => {
+  res.render('viewPurchase');
+});
+
+app.get('/createNewEvent', (req, res) => {
+  res.render('createNewEvent');
+});
+
+app.get('/signUpNewEvent', (req, res) => {
+  res.render('signUpNewEvent');
 });
 
 app.get('/vipMembership', (req, res) => {
