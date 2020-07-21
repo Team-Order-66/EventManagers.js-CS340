@@ -1,0 +1,88 @@
+<style>
+.newAccount {
+  max-width: 500px;
+  margin: 2rem auto;
+  border: 2px solid navy;
+  padding: 2rem;
+  label{
+    overflow: scroll;
+  }
+    input, textarea {
+      display: block;
+      width:100%;
+  }
+}
+
+table {
+  font-family: arial, sans-serif;
+  width: 60%;
+  margin-left: 600px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-left: 730px;
+}
+
+h4, li {
+  margin-left: 600px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+
+<!-- Side navigation -->
+<div class="sidenav">
+  <a href="account">Back to Login</a>
+</div>
+
+<h2>Join the Party!</h2>
+
+<div class="newAccount">
+  <h1>Create a new Account</h1>
+    <div class="txtb">
+      <label>First Name: </label>
+        <input type="text" name="First Name" id="firstName">
+    </div>
+
+     <div class="txtb">
+      <label>Last Name </label>
+      <input type="text" name="Last Name" id="lastname">
+    </div>
+
+    <div class="date">
+      <label for="start">Birth date:</label>
+      <input type="date" id="birth" name="birthdate"
+    </div>
+
+    <div class="txtb">
+      <label>E-Mail</label>
+      <input type="email" name="E-mail" id="email">
+    </div>
+
+    <div class="txtb">
+      <label>Phone Number: </label>
+      <input type="text" name="Phone Number" id="phoneNumber">
+    </div>
+
+    <div class="txtb">
+      <label>Message: </label>
+      <textarea type="text" name="Message" id="Message"></textarea>
+    </div>
+
+    <div class="txtb">
+        <input type="submit" placeholder="Submit" id="sendBtn">
+    </div>
+
+</form>
+
+
+
