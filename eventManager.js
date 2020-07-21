@@ -30,6 +30,10 @@ app.post('/logIn', (req, res) => {
   res.render('logIn');
 });
 
+app.get('/signUpNewAccount', (req, res) => {
+  res.render('signUpNewAccount');
+});
+
 app.get('/eventScheduling', (req, res) => {
   res.render('eventScheduling');
 });
