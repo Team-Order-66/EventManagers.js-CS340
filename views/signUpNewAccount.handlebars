@@ -78,11 +78,18 @@ tr:nth-child(even) {
       <textarea type="text" name="Message" id="Message"></textarea>
     </div>
 
-    <div class="txtb">
-        <input type="submit" placeholder="Submit" id="sendBtn">
-    </div>
+   <button id="register" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 50px;  margin-bottom: 30px;">Register</button>
+
+   <div id="registerButton"> </div>
 
 </form>
 
+
+<script>
+  document.getElementById("register").addEventListener("click", function(button)
+  {
+    document.getElementById("registerButton").innerHTML = "Will allow users to register"
+  });
+</script>
 
 

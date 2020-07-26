@@ -31,14 +31,24 @@ body{
       <input type="text" placeholder="First Name">
       <input type="text" placeholder="Last Name">
       <input type="email" placeholder="E-mail">
-      <input type="button" value="Register">      
     </form>
    </div>
 
-  <h4>To be added:</h4>
-    <li>Empty field validation </li>
-    <li>Button functionality</li>
+   <button id="register" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 680px;  margin-bottom: 30px;">Register</button> 
+
+   <div id="registerButton" style=" margin-left: 680px;"> </div>
+
+<script>
+  document.getElementById("register").addEventListener("click", function(button)
+  {
+    document.getElementById("registerButton").innerHTML = "Will allow users to register and posted to vip Members table"
+  });
+</script>
    
 </body>
 
-</html>
+
+
+
+
+

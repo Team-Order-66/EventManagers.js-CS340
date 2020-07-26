@@ -72,7 +72,7 @@ body{
       <label for="upass" id="ps">Password:</label>
         <input type="password" name="pass" placeholder="Enter Password" id="upass"><br/>
  
-      <button type="submit" value="logIn"  id="submit">Login</button>
+      <button type="submitBtn" value="logIn"  id="submit">Login</button>
     
       <a href="signUpNewAccount">Sign-Up</a>
 </div>
@@ -80,3 +80,11 @@ body{
 </form>
 </div>
 </body>
+
+<script>
+  document.getElemetById("submitBtn").addEventListener("click", function(button)
+  {
+    document.getElementById("submit").innerHTML = "submits the form"
+  });
+
+</script>

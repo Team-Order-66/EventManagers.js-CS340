@@ -116,14 +116,6 @@ h2 {
         border:	2px solid black;
 }
 
-.form-wrap input[type="button"] {
-	width: 320px;
-	height: 45px;
-	border: none;
-	background: black;
-	color: white;
-}
-
 .sidenav {
   width: 260px;
   position: fixed;

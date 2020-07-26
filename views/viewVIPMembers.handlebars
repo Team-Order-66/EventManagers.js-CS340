@@ -24,15 +24,6 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-input[type="button"] {
-  width: 320px;
-  height: 45px;
-  border: none;
-  background: black;
-  color: white;
-  margin-left: 900px;	
-  margin-bottom: 30px;
-}
 
 </style>
 
@@ -67,9 +58,16 @@ input[type="button"] {
   </tr>
 </table>
 
-<input type="button" value="Search">
 
-<h4>To be added:</h4>
-  <li>Search function/button</li>
-  <li>Delete function/button?</li>
-  <li>Select function/button?</li>
+
+<button id="search" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 900px;  margin-bottom: 30px;">Search</button>
+
+<div id="searchButton" style=" margin-left: 900px;"> </div>
+
+<script>
+  document.getElementById("search").addEventListener("click", function(button)
+  {
+    document.getElementById("searchButton").innerHTML = "Will search events from the table"
+  });
+
+</script>

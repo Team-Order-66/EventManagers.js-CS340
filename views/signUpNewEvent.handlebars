@@ -69,8 +69,22 @@ tr:nth-child(even) {
   </tr>
 </table>
 
-<h4>To be added:</h4>
-  <li>Update function/button</li>
-  <li>Delete function/button</li>
-  <li>Select function/button</li>
+<button id="button1" style=" margin-left: 1000px;">Update</button>
+<div id="updateButton" style=" margin-left: 900px;"> </div>
+
+<button id="button2" style=" margin-left: 1000px;">Remove</button>
+<div id="removeButton"style=" margin-left: 900px;"> </div>
+
+<script>
+  document.getElementById("button1").addEventListener("click", function(button)
+  {
+    document.getElementById("updateButton").innerHTML = "Will allow users to update the table"
+  });
+
+  document.getElementById("button2").addEventListener("click", function(button)
+  {
+    document.getElementById("removeButton").innerHTML = "Will allow users to remove the table"
+  });
+
+</script>
 
