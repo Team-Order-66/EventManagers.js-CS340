@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 11111);
+app.set('port', 60000);
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -56,6 +56,10 @@ app.get('/vipMembership', (req, res) => {
 
 app.get('/viewVIPMembers', (req, res) => {
   res.render('viewVIPMembers');
+});
+
+app.get('/viewAccount', (req, res) => {
+  res.render('viewAccount');
 });
 
 app.use(function(req,res){
