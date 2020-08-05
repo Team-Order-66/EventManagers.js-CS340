@@ -1,14 +1,25 @@
+// import modules
 var express = require('express');
 var path = require('path');
 var app = express();
 
+// Set up MySQL using dbcon.js file
+const mysql = require('./db-config.js');
+app.set('mysql', mysql);
+
+// Set up handlebars
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
-
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
+
+// Set up route to static files 
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Set up port for application
 app.set('port', 60000);
+
+
+// Routes to pages
 
 app.get('/home', (req, res) => {
   res.render('home');
