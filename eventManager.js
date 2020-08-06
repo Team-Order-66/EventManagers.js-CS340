@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set up port for application
 app.set('port', 60000);
 
-
 // Routes to pages
 
 app.get('/home', (req, res) => {
