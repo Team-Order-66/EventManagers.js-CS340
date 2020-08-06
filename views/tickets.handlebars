@@ -2,17 +2,38 @@
     .purchase{
         align: center;
     }
+
+    .fa-search{
+        background-color: white;
+    }
+    #tickets-header{
+        text-align: center;
+    }
 </style>
 <div class="container">
     <div class="row">
         <div class="col-sm">
         </div>
-        <div class="col-sm">
+        <div class="col-lg" id="tickets-header">
             <h2>Purchase Tickets</h2>
         </div>
         <div class="col-sm">
         </div>
     </div>
+    <div class="row">
+    <!-- Search form -->
+        <div class="col-sm"></div>
+        <div class="col-sm">
+        <div>
+            <form class="form-inline">
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                <button type="submit" id="search-ticket"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+    <br />
     <div class="row">
         <div class="col-xs">
         </div>
@@ -83,8 +104,4 @@
   });
 
 </script>
-
-
-
-
 
