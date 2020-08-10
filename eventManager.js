@@ -18,7 +18,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set up port for application
 app.set('port', 60000);
 
-// Routes to pages
+// Routes with helper functions 
+app.use('/tickets', require('./routes/tickets-page.js'));
+
+
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -26,10 +29,6 @@ app.get('/home', (req, res) => {
 
 app.get('/index', (req, res) => {
   res.render('index');
-});
-
-app.get('/tickets', (req, res) => {
-  res.render('tickets');
 });
 
 app.get('/account', (req, res) => {

@@ -35,33 +35,22 @@
                 <thead>
                     <tr>
                         <th scope="col">Event</th>
-                        <th scope="col">Venue</th>
                         <th scope="col">Date</th>
+                        <th scope="col">Start Time</th>
                         <th scope="col">Price</th>
                      </tr>
                 </thead>
                 <tbody>
+                    {{#each events}}
                     <tr>
-                        <td scope="row">Stand Up Comedy by Dr. Comedy</td>
-                        <td>The Blues Square</td>
-                        <td>10/16/2020</td>
-                        <td>$10</td>
-                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>
+                        <td scope="row">{{eventName}}</td>
+                        <td>{{date}}</td>
+                        <td>{{startTime}}</td>
+                        <td>{{ticketPrice}}</td>
+                        <!--
+                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
                     </tr>
-                    <tr>
-                        <td scope="row">The Bananas</td>
-                        <td>The Rock Tavern</td>
-                        <td>8/4/2020</td>
-                        <td>12/31/2020</td>
-                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>
-                    </tr>
-                    <tr>
-                        <td scope="row">The Rock and Roll Guys</td>
-                        <td>Bare Hall</td>
-                        <td>12/31/2020</td>
-                        <td>$40</td>
-                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>
-                    </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>

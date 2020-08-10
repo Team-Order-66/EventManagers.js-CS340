@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awseome -->
     <script src="https://kit.fontawesome.com/94faffc868.js" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+      <script src="/static/{{this}}"></script>
+    {{/each}}
   </head>
 
   <body>

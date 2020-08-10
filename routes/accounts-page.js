@@ -1,5 +1,5 @@
 // Backend for our accounts page
-
+/*
 const express = require('express');
 const router = express.Router();
 
@@ -17,4 +17,4 @@ router.get(‘/viewAccount’, (req, res) => {
     }
   res.render(‘viewAccount’);
   }
-});
+});*/
