@@ -43,7 +43,7 @@ app.get('/signUpNewAccount', (req, res) => {
   res.render('signUpNewAccount');
 });
 
-app.get('/eventScheduling', (req, res) => {
+app.get('/eventManagers', (req, res) => {
   res.render('eventScheduling');
 });
 
