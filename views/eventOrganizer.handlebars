@@ -1,0 +1,57 @@
+<style>
+  #event-organizer-header{
+    text-align: center;
+  }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" id="event-organizer-header">
+            <h2>Event Organizer Information</h2>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs"></div>
+      <div class="col-lg">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th scope="col">Organizer ID</th>
+                    <th scope="col">Organizer Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{#each organizers}}
+                  <tr>
+                    <td scope="row">{{organizerID}}</td>
+                    <td>{{organizerName}}</td>
+                    <td>{{email}}</td>
+                    <td>{{phone}}</td>
+                        <!--
+                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                  </tr>
+                  {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+</div>
+
+
+
+
+<script>
+  document.getElementById("search").addEventListener("click", function(button)
+  {
+    document.getElementById("searchButton").innerHTML = "Will search events from the table"
+  });
+
+</script>
+
+

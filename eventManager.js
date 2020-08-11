@@ -18,10 +18,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set up port for application
 app.set('port', 60000);
 
-// Routes with helper functions 
+// Routes
 app.use('/tickets', require('./routes/tickets-page.js'));
-
-
+app.use('/eventOrganizer', require('./routes/event-organizer-page.js'));
+app.use('/eventVenue', require('./routes/event-venue-page.js'));
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -41,10 +41,6 @@ app.post('/logIn', (req, res) => {
 
 app.get('/signUpNewAccount', (req, res) => {
   res.render('signUpNewAccount');
-});
-
-app.get('/eventManagers', (req, res) => {
-  res.render('eventScheduling');
 });
 
 app.get('/viewPurchase', (req, res) => {

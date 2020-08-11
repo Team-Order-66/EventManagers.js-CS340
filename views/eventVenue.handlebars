@@ -1,0 +1,50 @@
+<style>
+  #event-venue-header{
+    text-align: center;
+  }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" id="event-venue-header">
+            <h2>Event Venue Information</h2>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs"></div>
+      <div class="col-lg">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th scope="col">Venue ID</th>
+                    <th scope="col">Venue Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Capacity</th>
+                    <th scope="col">Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{#each venues}}
+                  <tr>
+                    <td scope="row">{{venueID}}</td>
+                    <td>{{venueName}}</td>
+                    <td>{{streetAddress}}</td>
+                    <td>{{city}}</td>
+                    <td>{{state}}</td>
+                    <td>{{zipcode}}</td>
+                    <td>{{phone}}</td>
+                        <!--
+                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                  </tr>
+                  {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+</div>
