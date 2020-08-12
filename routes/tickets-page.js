@@ -11,7 +11,7 @@ module.exports = function() {
     //function that will be used to get all events that are currently in the database
     function getAllEvents(res, mysql, context, complete) {
         // sqlQuery for selecting the fields we want to display from the events
-        let sqlQuery = 'SELECT eventName, DATE_FORMAT(date,"%M %d %Y") as date, DATE_FORMAT(startTime,"%k:%i") as startTime, ticketPrice FROM Event';
+        let sqlQuery = 'SELECT eventID, eventName, DATE_FORMAT(date,"%M %d %Y") as date, DATE_FORMAT(startTime,"%k:%i") as startTime, ticketPrice FROM Event';
         console.log(sqlQuery);
         mysql.pool.query(sqlQuery, function(error, results, fields){
             if (error){
@@ -40,8 +40,25 @@ module.exports = function() {
         }
     });
 
+    // this route will handle inserting a new event
+    router.post('/', function(req, res){
+        var mysql = req.app.get('mysql'); // mysql
+        var sqlQuery = 'INSERT INTO Event (eventName, date, startTime, endTime, ticketPrice, organizerID, venueID) VALUES (?,?,?,?,?,?,?)';  // creating our sql query
+        var inserts = [req.body.eventName, req.body.date, req.body.startTime, req.body.endTime, req.body.ticketPrice, req.body.organizerID, req.body.venueID]; // values that take from the form th at will be inserted 
+        console.log(inserts);
+        sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
+            if (error) {
+                console.log(JSON.stringify(error))
+                res.write(JSON.stringify(error));
+                res.end();
+            } else {
+                res.redirect('/tickets');
+            }
+        });
+    })
+
+
+
     return router;
 
-    // function that gets the events based on the name of the event
-    // function searchEvents(res, mysql)
 }();

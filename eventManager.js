@@ -26,6 +26,7 @@ app.set('port', 60000);
 app.use('/tickets', require('./routes/tickets-page.js'));
 app.use('/eventOrganizer', require('./routes/event-organizer-page.js'));
 app.use('/eventVenue', require('./routes/event-venue-page.js'));
+app.use('/customers', require('./routes/customers-page.js'));
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -35,40 +36,12 @@ app.get('/index', (req, res) => {
   res.render('index');
 });
 
-app.get('/account', (req, res) => {
-  res.render('account');
-});
-
-app.post('/logIn', (req, res) => {
-  res.render('logIn');
-});
-
-app.get('/signUpNewAccount', (req, res) => {
-  res.render('signUpNewAccount');
-});
-
-app.get('/viewPurchase', (req, res) => {
-  res.render('viewPurchase');
-});
-
-app.get('/createNewEvent', (req, res) => {
-  res.render('createNewEvent');
-});
-
-app.get('/signUpNewEvent', (req, res) => {
-  res.render('signUpNewEvent');
-});
-
 app.get('/vipMembership', (req, res) => {
   res.render('vipMembership');
 });
 
 app.get('/viewVIPMembers', (req, res) => {
   res.render('viewVIPMembers');
-});
-
-app.get('/viewAccount', (req, res) => {
-  res.render('viewAccount');
 });
 
 app.use(function(req,res){
