@@ -2,6 +2,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
+var bodyParser = require('body-parser');
 
 // Set up MySQL using dbcon.js file
 const mysql = require('./db-config.js');
@@ -21,8 +22,6 @@ app.set('port', 60000);
 // Routes with helper functions 
 app.use('/tickets', require('./routes/tickets-page.js'));
 
-
-
 app.get('/home', (req, res) => {
   res.render('home');
 });
@@ -33,10 +32,6 @@ app.get('/index', (req, res) => {
 
 app.get('/account', (req, res) => {
   res.render('account');
-});
-
-app.post('/logIn', (req, res) => {
-  res.render('logIn');
 });
 
 app.get('/signUpNewAccount', (req, res) => {
@@ -62,6 +57,7 @@ app.get('/signUpNewEvent', (req, res) => {
 app.get('/vipMembership', (req, res) => {
   res.render('vipMembership');
 });
+
 
 app.get('/viewVIPMembers', (req, res) => {
   res.render('viewVIPMembers');

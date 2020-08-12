@@ -3,4 +3,3 @@ CS340 Group Project - creating an application using sql for a website that allow
 
 URL: http://flip1.engr.oregonstate.edu:60000/home
 
-blahblahblah

@@ -4,88 +4,115 @@ body{
   background-image: url('images/concertBackground.jpg');
   margin: 0px;
   padding: 0px;
-  text-align:center;
   width: 100%;
-} 
-  
-  input[type=text], input[type=password]{
-  width:20%;
-  padding:7px 10px;
-  margin: 10px 0;
-  display:inline-block;
-  border: 2px solid black;
-  box-sizing: border-box;
 }
-     
-  button {
-  background-color: black;
-  width: 10%;
-  padding: 9px 5px;
-  margin:10px 0px 0px 35px;
-  cursor:pointer;
-  border:none;
-  color:#ffffff;
-  font-size: 15px;
-  font-weight: bold;
-}
-     
-  button:hover {
-  opacity:0.8;
-}
-     
 
-  #un,#ps {
-  font-family:'Lato', sans-serif;
-  color: black;
+.firstNameTxtb {
+  margin-left: 25px;
 }
- 
-  #container{
-  position: absolute;
-  top: 0;
-  bottom: 290px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width:600;
-  height: 300px;
+
+.lastNameTxtb {
+  margin-left: 22px;
+}
+
+.birthDateTxtb {
+  margin-left: 17px;
+}
+
+.phoneNumberTxtb {
+  margin-left: 53px;
+}
+
+.sidenav {
+    text-align: center;
+}
+
+.newAccount {
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem auto;
+  border: 2px solid navy;
+  padding: 2rem;
+  label{
+    overflow: scroll;
+    inline-block;
+  }
+    input, textarea {
+      display: block;
+      width:50%;
+  }
+}
+
+table {
+  font-family: arial, sans-serif;
+  width: 60%;
+  margin-left: 600px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-left: 50px;
+  margin-top: 15px;
   text-align: center;
 }
- 
+
+h4, li {
+  margin-left: 600px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 </style>
 
-<body>
-  <!-- Side navigation -->
-  <div class="sidenav">
-    <a href="account">Existing User Log-in</a>
-    <a href="signUpNewAccount">Create a New Account</a>
-    <a href="viewAccount">View Account</a>
-
-  </div>
-
-<div id="container">
-  <form action="logIn" method="post" id="flogin">
- 
-    <div class="border-box">
-      <h2>Login to your Account</h2>
-      <label for="uname" id="un">Username:</label>
-        <input type="text" name="user" placeholder="Enter Username" id="uname"><br/>
- 
-      <label for="upass" id="ps">Password:</label>
-        <input type="password" name="pass" placeholder="Enter Password" id="upass"><br/>
- 
-      <button type="submitBtn" value="logIn"  id="submit">Login</button>
-    
-      <a href="signUpNewAccount">Sign-Up</a>
+<!-- Side navigation -->
+<div class="sidenav">
+<a href="viewAccount">View Account</a>
 </div>
- 
+
+<h2>Join the Party!</h2>
+
+<form id="addAccount" action="/viewAccount" method="post">
+<div class="newAccount">
+  <h1>Create a new Account</h1>
+    <div class="firstNameTxtb">
+      <label>First Name: </label>
+        <input type="text" name="First Name" id="firstName">
+    </div>
+
+     <div class="lastNameTxtb">
+      <label>Last Name: </label>
+      <input type="text" name="Last Name" id="lastname">
+    </div>
+
+    <div class="birthDateTxtb">
+      <label>Birth Date:</label>
+      <input type="date" name="DOB" id="dateOfBirth">
+    </div>
+
+   <div class="phoneNumberTxtb">
+      <label>Phone Number:</label>
+      <input type="tel" name="Phone Number" id="phone">
+    </div>
+
+   <button id="register" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 50px;  margin-bottom: 30px;">Register</button>
+
+   <div id="registerButton"> </div>
+
 </form>
-</div>
-</body>
+
 
 <script>
-  document.getElemetById("submitBtn").addEventListener("click", function(button)
+  document.getElementById("register").addEventListener("click", function(button)
   {
-    document.getElementById("submit").innerHTML = "submits the form"
+    document.getElementById("registerButton").innerHTML = "Will allow users to register"
   });
-
 </script>
+
+
