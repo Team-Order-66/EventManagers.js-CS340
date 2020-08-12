@@ -1,8 +1,10 @@
 // import modules
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var path = require('path');
 var app = express();
-var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded{extended: false});
 
 // Set up MySQL using dbcon.js file
 const mysql = require('./db-config.js');
@@ -21,6 +23,7 @@ app.set('port', 60000);
 
 // Routes with helper functions 
 app.use('/tickets', require('./routes/tickets-page.js'));
+app.use('/account', require('./routes/accounts-page.js'));
 
 app.get('/home', (req, res) => {
   res.render('home');

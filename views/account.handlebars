@@ -1,120 +1,39 @@
 <style>
 
 body{
-  background-image: url('images/concertBackground.jpg');
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-}
-
-.firstNameTxtb {
-  margin-left: 25px;
-}
-
-.lastNameTxtb {
-  margin-left: 22px;
-}
-
-.birthDateTxtb {
-  margin-left: 17px;
-}
-
-.phoneNumberTxtb {
-  margin-left: 53px;
-}
-
-.sidenav {
-    text-align: center;
-}
-
-.newAccount {
-  text-align: center;
-  max-width: 500px;
-  margin: 2rem auto;
-  border: 2px solid navy;
-  padding: 2rem;
-  label{
-    overflow: scroll;
-    inline-block;
-  }
-    input, textarea {
-      display: block;
-      width:50%;
-  }
-}
-
-table {
-  font-family: arial, sans-serif;
-  width: 60%;
-  margin-left: 600px;
-  margin-bottom: 30px;
-}
-
-h2 {
-  margin-left: 50px;
-  margin-top: 15px;
-  text-align: center;
-}
-
-h4, li {
-  margin-left: 600px;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+ // background-image: url('images/concertBackground.jpg');
 }
 
 </style>
 
-<!-- Side navigation -->
-<div class="sidenav">
-<a href="viewAccount">View Accounts</a>
-<a href="viewPurchase">View Purchases</a>
-
-</div>
-
-<h2>Join the Party!</h2>
-
-<form id="addAccount" action="/viewAccount" method="post">
-<div class="newAccount">
-  <h1>Create a new Account</h1>
-    <div class="firstNameTxtb">
-      <label>First Name: </label>
-        <input type="text" name="First Name" id="firstName">
-    </div>
-
-     <div class="lastNameTxtb">
-      <label>Last Name: </label>
-      <input type="text" name="Last Name" id="lastname">
-    </div>
-
-    <div class="birthDateTxtb">
-      <label>Birth Date:</label>
-      <input type="date" name="DOB" id="dateOfBirth">
-    </div>
-
-   <div class="phoneNumberTxtb">
-      <label>Phone Number:</label>
-      <input type="tel" name="Phone Number" id="phone">
-    </div>
-
-   <button id="register" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 50px;  margin-bottom: 30px;">Register</button>
-
-   <div id="registerButton"> </div>
-
+<h1>Join the Party!</h1>
+<table>
+  <thead>
+    <th>customerID</th>
+    <th>E-mail</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Date of Birth</th>
+    <th>Phone #</th>
+  </thead>
+  <tbody>
+    {{#each account}}
+    <tr>
+      <td>{{customerID}}</td>
+      <td>{{email}}</td>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+      <td>{{dateOfBirth}}</td>
+      <td>{{phoneNumber}}</td>
+    </tr>
+    {{/each}}
+<form id="addAccount" action="/account" method="post">
+customerID: <input type="number" name="customerID"><br>
+E-mail: <input type="email" name="email"><br>
+First Name: <input type="text" name="fistName"><br>
+Last Name: <input type="text" name="lastName"><br>
+Birth Date: <input type="date" name="dateOfBirth"><br>
+Phone Number: <input type="number" name="phone"><br>
+<input type="submit" value="Submit">
 </form>
-
-
-<script>
-  document.getElementById("register").addEventListener("click", function(button)
-  {
-    document.getElementById("registerButton").innerHTML = "Will allow users to register"
-  });
-</script>
-
-
+</table>

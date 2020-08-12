@@ -1,19 +1,23 @@
-/*module.exports = function() {
-const express = require('express');   const router = express.Router();       
-// select querey that will view our accounts -- yet to be properly implemented   
-router.post(‘/', (req, res) {    
-	var mysql = req.app.get('mysql');    
-	var sql = "INSERT INTO Customer (email, firstName, lastName, dateOfBirth, phone) VALUES (?, ?, ?, ?, ?)";    
-	var inserts = [req.body.email, req.body.firstName, req.body.lastName, req.body.dateOfBirth, req.body.phone];     
-	sql = mysql.pool.query(sql,inserts,function (error, results, fields){    
-		if (error) {    
-			res.write(JSON.stringify(error));    
-			res.end();    
-		}else{    
-			res.render(‘viewAccount’);    
-		}     
-	});    
+module.exports = function() {
+	const express = require('express');   
+	const router = express.Router();       
+
+  	router.post('/', function(req, res) {    
+		var mysql = req.app.get('mysql');
+ 		var sqlQuery = 'INSERT INTO Customer (customerID, email, firstName, lastName, dateOfBirth, phone) VALUE (?,?,?,?,?,?)';
+           	var inserts = [req.body.customerID, req.body.email, req.body.firstName, req.body.lastName, req.body.dateOfBirth, req.body.phone];
+			console.log(inserts)
+			sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
+				if(error) {
+					console.log(JSON.stringify(error));
+					res.write(JSON.stringify(error));
+					res.end();
+				}else{    
+					res.redirect('/account');    
+				}     
+		});    
 });
+
 return router;
+
 }();
-*/
