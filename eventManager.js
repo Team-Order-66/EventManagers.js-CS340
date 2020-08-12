@@ -21,7 +21,6 @@ app.set('port', 60000);
 
 // Routes with helper functions 
 app.use('/tickets', require('./routes/tickets-page.js'));
-app.use('/viewAccount', require('./routes/accounts-page.js'));
 
 app.get('/home', (req, res) => {
   res.render('home');
