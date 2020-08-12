@@ -40,7 +40,7 @@ module.exports = function() {
         }
     });
 
-    // this route will handle inserting a new 
+    // this route will handle inserting a new event venue
     router.post('/', function(req, res){
         var mysql = req.app.get('mysql'); // mysql
         var sqlQuery = 'INSERT INTO EventVenue (venueName, capacity, streetAddress, city, state, zipcode, phone) VALUES (?,?,?,?,?,?,?)';  // creating our sql query

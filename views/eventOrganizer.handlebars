@@ -41,7 +41,31 @@
         </div>
         <div class="col-xs"></div>
     </div>
+
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" >
+            <h2 class="event-venue-header">Add a New Event Organizer</h2>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <form id="add-organizer" action="/eventOrganizer" method="POST">
+        <div class="row">
+            <label for="organzier-name">Organizer Name:</label>
+            <input type="text" class="form-control" name="organizerName" placeholder="Organizer Name">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" name="phone" placeholder="1234567890">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" name="email" placeholder="organizer@email.com">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Add Venue</button>
+            </div>
+        </div>
+    </form>
 </div>
+
+
 
 
 

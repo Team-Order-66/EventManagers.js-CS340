@@ -40,8 +40,25 @@ module.exports = function() {
         }
     });
 
+    // this route will handle inserting a new event organizer
+    router.post('/', function(req, res){
+        var mysql = req.app.get('mysql'); // mysql
+        var sqlQuery = 'INSERT INTO EventOrganizer (organizerName, phone, email) VALUES (?,?,?)';  // creating our sql query
+        var inserts = [req.body.organizerName, req.body.phone, req.body.email]; // values that take from the form th at will be inserted 
+        console.log(inserts)
+        sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
+            if (error) {
+                console.log(JSON.stringify(error))
+                res.write(JSON.stringify(error));
+                res.end();
+            } else {
+                res.redirect('/eventOrganizer');
+            }
+        });
+    })
+
+
+
     return router;
 
-    // function that gets the events based on the name of the event
-    // function searchEvents(res, mysql)
 }();
