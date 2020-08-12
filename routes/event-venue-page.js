@@ -11,7 +11,7 @@ module.exports = function() {
     //function that will be used to get all eventsOrganizers that are currently in the database
     function getAllEventVenues(res, mysql, context, complete) {
         // sqlQuery for selecting the fields we want to display from the events
-        let sqlQuery = 'SELECT * FROM EventVenue';
+        var sqlQuery = 'SELECT * FROM EventVenue';
         console.log(sqlQuery);
         mysql.pool.query(sqlQuery, function(error, results, fields){
             if (error){
@@ -19,7 +19,7 @@ module.exports = function() {
                 res.end();
             }
             context.venues = results; // store data into context
-            console.log(results)
+            console.log(results);
             complete();
         });
     }
@@ -40,8 +40,25 @@ module.exports = function() {
         }
     });
 
+    // this route will handle inserting a new 
+    router.post('/', function(req, res){
+        var mysql = req.app.get('mysql'); // mysql
+        var sqlQuery = 'INSERT INTO EventVenue (venueName, capacity, streetAddress, city, state, zipcode, phone) VALUES (?,?,?,?,?,?,?)';  // creating our sql query
+        var inserts = [req.body.venueName, req.body.capacity, req.body.streetAddress, req.body.city, req.body.state, req.body.zipcode, req.body.phone]; // values that take from the form th at will be inserted 
+        console.log(inserts)
+        sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
+            if (error) {
+                console.log(JSON.stringify(error))
+                res.write(JSON.stringify(error));
+                res.end();
+            } else {
+                res.redirect('/eventVenue');
+            }
+        });
+    })
+
+
     return router;
 
-    // function that gets the events based on the name of the event
-    // function searchEvents(res, mysql)
+    // this route
 }();

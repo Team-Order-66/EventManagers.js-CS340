@@ -2,6 +2,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
+var bodyParser = require('body-parser');
 
 // Set up MySQL using dbcon.js file
 const mysql = require('./db-config.js');
@@ -11,6 +12,9 @@ app.set('mysql', mysql);
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
+
+//Set up body parser
+app.use(bodyParser.urlencoded({extended:true}));
 
 // Set up route to static files 
 app.use(express.static(path.join(__dirname, 'public')));

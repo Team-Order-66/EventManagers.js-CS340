@@ -1,5 +1,5 @@
 <style>
-  #event-venue-header{
+  .event-venue-header{
     text-align: center;
   }
 </style>
@@ -7,8 +7,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xs"></div>
-        <div class="col-lg" id="event-venue-header">
-            <h2>Event Venue Information</h2>
+        <div class="col-lg">
+            <h2 class="event-venue-header">Event Venue Information</h2>
         </div>
         <div class="col-xs">
         </div>
@@ -21,10 +21,11 @@
                   <tr>
                     <th scope="col">Venue ID</th>
                     <th scope="col">Venue Name</th>
+                    <th scope="col">Capacity</th>
                     <th scope="col">Address</th>
                     <th scope="col">City</th>
                     <th scope="col">State</th>
-                    <th scope="col">Capacity</th>
+                    <th scope="col">Zipcode</th>
                     <th scope="col">Phone</th>
                   </tr>
                 </thead>
@@ -33,6 +34,7 @@
                   <tr>
                     <td scope="row">{{venueID}}</td>
                     <td>{{venueName}}</td>
+                    <td>{{capacity}}</td>
                     <td>{{streetAddress}}</td>
                     <td>{{city}}</td>
                     <td>{{state}}</td>
@@ -47,4 +49,34 @@
         </div>
         <div class="col-xs"></div>
     </div>
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" >
+            <h2 class="event-venue-header">Add a New Event Venu</h2>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <form id="add-venue" action="/eventVenue" method="POST">
+        <div class="row">
+            <label for="venue-name">Venue Name:</label>
+            <input type="text" class="form-control" name="venueName" placeholder="Name">
+            <label for="capacity">Capacity:</label>
+            <input type="text" class="form-control" name="capacity" placeholder="capacity">
+            <label for="streetAddress">Street Address:</label>
+            <input type="text" class="form-control" name="streetAddress" placeholder="123 Street St.">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" name="city" placeholder="City">
+            <label for="state">State:</label>
+            <input type="text" class="form-control" name="state" placeholder="State Abbrev.">
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" class="form-control" name="zipcode" placeholder="00000">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" name="phone" placeholder="1234567890">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Add Venue</button>
+            </div>
+        </div>
+    </form>
+
 </div>
