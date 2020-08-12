@@ -1,51 +1,46 @@
 <style>
-h4, li {
-  margin-left: 680px;
-}
 
 body{
-  background-image: url('images/vipBackground.jpg');
+ // background-image: url('images/vipBackground.jpg');
 }
+
 </style>
 
-<!DOCTYPE html>
-<html>
+<h1>Become a VIP Member</h1>
 
-<head>
-  <meta charset="utf-8">
-  <title>VIP Membership</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="style.css" rel="stylesheet">
-</head>
+<table>
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>E-mail</th>
+  </thead>
+  <tbody>
+    {{#each vip}}
+    <tr>
+       <td>{{firstName}}</td>
+       <td>{{lastName}}</td>
+       <td>{{email}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
 
-<body>
-  <!-- Side navigation -->
-  <div class="sidenav">
-    <a href="vipMembership">Become a VIP Member</a>
-    <a href="viewVIPMembers">View VIP Members</a>
-  </div>
-   
-  <div class ="form-wrap">
-    <form>
-      <h1>Become a VIP Member</h1>
-      <input type="text" placeholder="First Name">
-      <input type="text" placeholder="Last Name">
-      <input type="email" placeholder="E-mail">
-    </form>
-   </div>
-
-   <button id="register" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 680px;  margin-bottom: 30px;">Register</button> 
-
-   <div id="registerButton" style=" margin-left: 680px;"> </div>
+  <form id="addVipMember" action="/vipMembership" method="post">
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <input type="email" placeholder="E-mail">
+    <input type="submit" value="Submit">
+  </form>
+</table>
 
 <script>
+
   document.getElementById("register").addEventListener("click", function(button)
   {
     document.getElementById("registerButton").innerHTML = "Will allow users to register and posted to vip Members table"
   });
+
 </script>
    
-</body>
 
 
 

@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var path = require('path');
 var app = express();
-var urlencodedParser = bodyParser.urlencoded{extended: false});
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 // Set up MySQL using dbcon.js file
 const mysql = require('./db-config.js');
