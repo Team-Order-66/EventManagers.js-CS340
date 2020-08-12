@@ -1,0 +1,72 @@
+<style>
+  .customer-header{
+    text-align: center;
+  }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg">
+            <h2 class="customer-header">Customer Information</h2>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs"></div>
+      <div class="col-lg">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{#each customers}}
+                  <tr>
+                    <td scope="row">{{customerID}}</td>
+                    <td>{{firstName}}</td>
+                    <td>{{lastName}}</td>
+                    <td>{{email}}</td>
+                    <td>{{phone}}</td>
+                    <!--
+                    <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                  </tr>
+                  {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" >
+            <h2 class="customer-header">Add a New Customer</h2>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <form id="add-customer" action="/customers" method="POST">
+        <div class="row">
+            <label for="first-name">First Name</label>
+            <input type="text" class="form-control" name="firstName" placeholder="First Name">
+            <label for="phone">Last Name</label>
+            <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" placeholder="customer@email.com">
+            <label for="email">Date of Birth</label>
+            <input type="date" class="form-control" name="dateOfBirth" placeholder="00/00/0000">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" name="phone" placeholder="1111111111">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Add Customer</button>
+            </div>
+        </div>
+    </form>
+</div>

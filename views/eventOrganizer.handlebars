@@ -1,0 +1,81 @@
+<style>
+  #event-organizer-header{
+    text-align: center;
+  }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" id="event-organizer-header">
+            <h2>Event Organizer Information</h2>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs"></div>
+      <div class="col-lg">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th scope="col">Organizer ID</th>
+                    <th scope="col">Organizer Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{#each organizers}}
+                  <tr>
+                    <td scope="row">{{organizerID}}</td>
+                    <td>{{organizerName}}</td>
+                    <td>{{email}}</td>
+                    <td>{{phone}}</td>
+                    <!--
+                    <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                  </tr>
+                  {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" >
+            <h2 class="event-venue-header">Add a New Event Organizer</h2>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <form id="add-organizer" action="/eventOrganizer" method="POST">
+        <div class="row">
+            <label for="organzier-name">Organizer Name:</label>
+            <input type="text" class="form-control" name="organizerName" placeholder="Organizer Name">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" name="phone" placeholder="1234567890">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" name="email" placeholder="organizer@email.com">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Add Venue</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+<script>
+  document.getElementById("search").addEventListener("click", function(button)
+  {
+    document.getElementById("searchButton").innerHTML = "Will search events from the table"
+  });
+
+</script>
+
+

@@ -1,5 +1,5 @@
 /**
- *  Tickets Page - routes
+ *  Event Organizser Page - routes
  *  2 SELECT QUERIES - 1st one will select all events, 2nd one will select events based on name of event input by user
  *  
  */
@@ -8,17 +8,17 @@ module.exports = function() {
     const express = require('express');
     const router = express.Router();
 
-    //function that will be used to get all events that are currently in the database
-    function getAllEvents(res, mysql, context, complete) {
+    //function that will be used to get all eventsOrganizers that are currently in the database
+    function getAllEventOrganizers(res, mysql, context, complete) {
         // sqlQuery for selecting the fields we want to display from the events
-        let sqlQuery = 'SELECT eventID, eventName, DATE_FORMAT(date,"%M %d %Y") as date, DATE_FORMAT(startTime,"%k:%i") as startTime, ticketPrice FROM Event';
+        let sqlQuery = 'SELECT * FROM EventOrganizer';
         console.log(sqlQuery);
         mysql.pool.query(sqlQuery, function(error, results, fields){
             if (error){
                 res.write(JSON.stringify(error));
                 res.end();
             }
-            context.events = results; // store data into context
+            context.organizers = results; // store data into context
             console.log(results)
             complete();
         });
@@ -30,29 +30,29 @@ module.exports = function() {
         var context = {}; // the context object will be used to hold the values returned by the query
         context.jsscripts = []; // references all the static javascript files we will need
         var mysql = req.app.get('mysql');  // mysql
-        getAllEvents(res, mysql, context, complete); // call the getAllEvents function to get all the events in the database
+        getAllEventOrganizers(res, mysql, context, complete); // call the getAllEvents function to get all the events in the database
         // render the tickets handlebars page query is complete from the getAllEvents function
         function complete(){
             callbackCount++;
             if (callbackCount>=1){
-                res.render('tickets', context);
+                res.render('eventOrganizer', context);
             }
         }
     });
 
-    // this route will handle inserting a new event
+    // this route will handle inserting a new event organizer
     router.post('/', function(req, res){
         var mysql = req.app.get('mysql'); // mysql
-        var sqlQuery = 'INSERT INTO Event (eventName, date, startTime, endTime, ticketPrice, organizerID, venueID) VALUES (?,?,?,?,?,?,?)';  // creating our sql query
-        var inserts = [req.body.eventName, req.body.date, req.body.startTime, req.body.endTime, req.body.ticketPrice, req.body.organizerID, req.body.venueID]; // values that take from the form th at will be inserted 
-        console.log(inserts);
+        var sqlQuery = 'INSERT INTO EventOrganizer (organizerName, phone, email) VALUES (?,?,?)';  // creating our sql query
+        var inserts = [req.body.organizerName, req.body.phone, req.body.email]; // values that take from the form th at will be inserted 
+        console.log(inserts)
         sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
             if (error) {
                 console.log(JSON.stringify(error))
                 res.write(JSON.stringify(error));
                 res.end();
             } else {
-                res.redirect('/tickets');
+                res.redirect('/eventOrganizer');
             }
         });
     })
