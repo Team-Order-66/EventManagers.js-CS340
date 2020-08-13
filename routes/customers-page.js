@@ -27,7 +27,7 @@ module.exports = function(){
   router.get('/', function(req, res){
       var callbackCount = 0;
       var context = {}; // the context object will be used to hold the values returned by the query
-      context.jsscripts = []; // references all the static javascript files we will need
+      context.jsscripts = ['delete-customer.js']; // references all the static javascript files we will need
       var mysql = req.app.get('mysql');  // mysql
       getAllCustomers(res, mysql, context, complete); // call the getAllEvents function to get all the events in the database
       // render the tickets handlebars page query is complete from the getAllEvents function
@@ -47,7 +47,7 @@ module.exports = function(){
     console.log(inserts)
     sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
         if (error) {
-            console.log(JSON.stringify(error))
+            console.log(JSON.stringify(error));
             res.write(JSON.stringify(error));
             res.end();
         } else {
@@ -55,6 +55,23 @@ module.exports = function(){
         }
     });
   });
+  
+  // this will be used to delete a customer from the records
+  router.delete('/:customerID', function(req, res){
+	var mysql = req.app.get('mysql');
+	var sqlQuery = "DELETE FROM Customer WHERE customerID = ?";
+	var inserts = [req.params.customerID];
+	sqlQuery = mysql.pool.query(sqlQuery, inserts, function(error, results, fields){
+		if(error){
+            res.write(JSON.stringify(error));
+            console.log(JSON.stringify(error));
+			res.status(400);
+			res.end();
+		}else{
+			res.status(202).end();
+		}
+	})
+  })
 
   return router;
 }();

@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Event ID</th>
+                        <th scope="col">Event</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Venue</th>
+                     </tr>
+                </thead>
+                <tbody>
+                    {{#each events}}
+                    <tr>
+                        <td scope="row">{{eventID}}</td>
+                        <td scope="row">{{eventName}}</td>
+                        <td>{{date}}</td>
+                        <td>{{startTime}}</td>
+                        <td>{{ticketPrice}}</td>
+                        <td>{{venue}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+</div>

@@ -34,6 +34,7 @@ body{
           <table class="table table-striped">
               <thead>
                   <tr>
+                    <th scope="col">Membership ID</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Venue</th>
@@ -42,11 +43,11 @@ body{
                 <tbody>
                 {{#each vipMembers}}
                   <tr>
-                    <td scope="row">{{fName}}</td>
+                    <td scope="row">{{id}}</td>
+                    <td>{{fName}}</td>
                     <td>{{lName}}</td>
                     <td>{{venue}}</td>
-                    <!--
-                    <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                    <td><button onclick="deleteVipMember({{id}})">DELETE MEMBERSHIP</button></td>
                   </tr>
                   {{/each}}
                 </tbody>
@@ -74,7 +75,7 @@ body{
             </div>
         </div>
     </form>
-</div>
+  </div>
    
 </body>
 
