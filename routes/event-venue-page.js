@@ -59,6 +59,4 @@ module.exports = function() {
 
 
     return router;
-
-    // this route
 }();

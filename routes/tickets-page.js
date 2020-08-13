@@ -66,7 +66,7 @@ module.exports = function() {
         console.log(inserts);
         sqlQuery = mysql.pool.query(sqlQuery, inserts, function (error, results, fields){
             if (error) {
-                console.log(JSON.stringify(error))
+                console.log(JSON.stringify(error));
                 res.write(JSON.stringify(error));
                 res.end();
             } else {

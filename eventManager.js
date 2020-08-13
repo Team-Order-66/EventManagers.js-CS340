@@ -37,10 +37,6 @@ app.get('/index', (req, res) => {
   res.render('index');
 });
 
-app.get('/viewVIPMembers', (req, res) => {
-  res.render('viewVIPMembers');
-});
-
 app.use(function(req,res){
   res.render('404');
 });
