@@ -19,31 +19,62 @@ body{
 </head>
 
 <body>
-  <!-- Side navigation -->
-  <div class="sidenav">
-    <a href="vipMembership">Become a VIP Member</a>
-    <a href="viewVIPMembers">View VIP Members</a>
-  </div>
-   
-  <div class ="form-wrap">
-    <form>
-      <h1>Become a VIP Member</h1>
-      <input type="text" placeholder="First Name">
-      <input type="text" placeholder="Last Name">
-      <input type="email" placeholder="E-mail">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg">
+            <h2>VIP MEMBER LIST</h2>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs"></div>
+      <div class="col-lg">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Venue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{#each vipMembers}}
+                  <tr>
+                    <td scope="row">{{fName}}</td>
+                    <td>{{lName}}</td>
+                    <td>{{venue}}</td>
+                    <!--
+                    <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                  </tr>
+                  {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs"></div>
+        <div class="col-lg" >
+            <h2 class="event-venue-header">BECOME A NEW VIP MEMBER OF YOUR FAVORITE EVENT VENUE!</h2>
+        </div>
+        <div class="col-xs"></div>
+    </div>
+
+    <form id="add-vip-member" action="/vipMembership" method="POST">
+        <div class="row">
+            <label for="customerID">Customer ID</label>
+            <input type="text" class="form-control" name="customerID" placeholder="Customer ID">
+            <label for="venueID">VENUE ID</label>
+            <input type="text" class="form-control" name="venueID" placeholder="VENUE ID">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Become VIP Memeber</button>
+            </div>
+        </div>
     </form>
-   </div>
-
-   <button id="register" style="  width: 320px;  height: 45px; border: none; background: black;  color: white;  margin-left: 680px;  margin-bottom: 30px;">Register</button> 
-
-   <div id="registerButton" style=" margin-left: 680px;"> </div>
-
-<script>
-  document.getElementById("register").addEventListener("click", function(button)
-  {
-    document.getElementById("registerButton").innerHTML = "Will allow users to register and posted to vip Members table"
-  });
-</script>
+</div>
    
 </body>
 

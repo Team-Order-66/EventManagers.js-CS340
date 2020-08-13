@@ -27,6 +27,7 @@ app.use('/tickets', require('./routes/tickets-page.js'));
 app.use('/eventOrganizer', require('./routes/event-organizer-page.js'));
 app.use('/eventVenue', require('./routes/event-venue-page.js'));
 app.use('/customers', require('./routes/customers-page.js'));
+app.use('/vipMembership', require('./routes/vip-page.js'));
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -35,10 +36,10 @@ app.get('/home', (req, res) => {
 app.get('/index', (req, res) => {
   res.render('index');
 });
-
+/*
 app.get('/vipMembership', (req, res) => {
   res.render('vipMembership');
-});
+});*/
 
 app.get('/viewVIPMembers', (req, res) => {
   res.render('viewVIPMembers');

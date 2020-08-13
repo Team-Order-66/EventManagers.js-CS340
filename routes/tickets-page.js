@@ -1,7 +1,7 @@
 /**
  *  Tickets Page - routes
  *  2 SELECT QUERIES - 1st one will select all events, 2nd one will select events based on name of event input by user
- *  
+ *  1 INSERT QUERY - it will insert the event into the Event table with all the information
  */
 
 module.exports = function() {
@@ -11,7 +11,8 @@ module.exports = function() {
     //function that will be used to get all events that are currently in the database
     function getAllEvents(res, mysql, context, complete) {
         // sqlQuery for selecting the fields we want to display from the events
-        let sqlQuery = 'SELECT eventID, eventName, DATE_FORMAT(date,"%M %d %Y") as date, DATE_FORMAT(startTime,"%k:%i") as startTime, ticketPrice FROM Event';
+        let sqlQuery = 'SELECT eventID, eventName, DATE_FORMAT(date,"%M %d %Y") as date, DATE_FORMAT(startTime,"%k:%i") as startTime, Event.ticketPrice as ticketPrice, EventVenue.venueName as venue';
+        sqlQuery += ' FROM Event INNER JOIN EventVenue on Event.venueID = EventVenue.venueID';
         console.log(sqlQuery);
         mysql.pool.query(sqlQuery, function(error, results, fields){
             if (error){
