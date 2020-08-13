@@ -34,8 +34,9 @@
                     <td>{{lastName}}</td>
                     <td>{{email}}</td>
                     <td>{{phone}}</td>
-                    <!--
-                    <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                    <!-- <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+  		    <td><button onclick="delete-customer({{customerID}})">Delete</button></td>
+  	            <td><a href="/customers/{{customerID}}">Update</a></td>
                   </tr>
                   {{/each}}
                 </tbody>

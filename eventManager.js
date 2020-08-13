@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up port for application
-app.set('port', 60000);
+app.set('port', 60007);
 
 // Routes
 app.use('/tickets', require('./routes/tickets-page.js'));
