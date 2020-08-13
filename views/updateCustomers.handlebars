@@ -1,0 +1,8 @@
+<h1>Update {{customers.firstName}} {{customers.lastName}}:</h1>
+<form id="customer-update" action="/customers" method="post">
+        First Name: <input type="text" name="firstName" value="{{customers.firstName}}"><br>
+        Last Name: <input type="text" name="lastName" value="{{customers.lastName}}"><br>
+        Email: <input type="email" name="email" value="{{customers.email}}"><br>
+        Phone #: <input type="text" name="phone" value="{{customers.phone}}"><br>
+</form>
+<button onclick="updateCustomer({{customers.customerID}})">Update</button>
