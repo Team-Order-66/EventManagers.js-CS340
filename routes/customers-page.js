@@ -91,6 +91,7 @@ module.exports = function(){
 	    })
     });
 
+    // this will serve as our get route for getting a customer by their ID - this will be the customer that is being UPDATED
     router.get('/:customerID', function(req, res){
         callbackCount = 0;
         var context = {};
