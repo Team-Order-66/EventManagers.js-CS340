@@ -20,13 +20,14 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up port for application
-app.set('port', 60000);
+app.set('port', 60007);
 
 // Routes
 app.use('/tickets', require('./routes/tickets-page.js'));
 app.use('/eventOrganizer', require('./routes/event-organizer-page.js'));
 app.use('/eventVenue', require('./routes/event-venue-page.js'));
 app.use('/customers', require('./routes/customers-page.js'));
+app.use('/vipMembership', require('./routes/vip-page.js'));
 
 app.get('/home', (req, res) => {
   res.render('home');
@@ -34,10 +35,6 @@ app.get('/home', (req, res) => {
 
 app.get('/index', (req, res) => {
   res.render('index');
-});
-
-app.get('/vipMembership', (req, res) => {
-  res.render('vipMembership');
 });
 
 app.get('/viewVIPMembers', (req, res) => {

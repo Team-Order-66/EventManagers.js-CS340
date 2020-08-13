@@ -22,8 +22,9 @@
         <div><p>Search by Event:</p></div>
         <div class="col-lg">
             <form class="form-inline">
-                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                <button type="submit" id="search-ticket"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" name="eventName" id="event-name">
+                <button type="submit" value="Search" onclick="searchEventByName()">Submit</button>
+                <!--<i class="fa fa-search" aria-hidden="true"></i>-->
             </form>
         </div>
         <div class="col-sm"></div>
@@ -39,6 +40,7 @@
                         <th scope="col">Date</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Venue</th>
                      </tr>
                 </thead>
                 <tbody>
@@ -49,8 +51,7 @@
                         <td>{{date}}</td>
                         <td>{{startTime}}</td>
                         <td>{{ticketPrice}}</td>
-                        <!--
-                        <td><button type="button" id="btn btn-primary purchase">Purchase</button></td>-->
+                        <td>{{venue}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
