@@ -5,7 +5,7 @@ function deleteVipMember(id){
         url:'/vipMembership/'+id,
         type:'DELETE',
         success: function(result){
-            window.location.reload(true);
+            window.location.reload(true);  // relaod the vip member page after the delete has happaned
         }
     })
 };

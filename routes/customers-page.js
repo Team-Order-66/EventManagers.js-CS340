@@ -1,8 +1,8 @@
 /*
- * SELECT QUERY  
- * INSERT QUERY
- * DELETE QUERY
- * UPDATE QUERY
+ * SELECT QUERY - one will get all customers, the other will get a customer by id which will then be used to update that customer
+ * INSERT QUERY - insert query that will insert one customer into the table
+ * DELETE QUERY - delete query that will delete a customer
+ * UPDATE QUERY - update query that will update a customer
  */
 
 module.exports = function(){
@@ -123,5 +123,6 @@ module.exports = function(){
             }
         });
     });
+    
     return router;
 }();
